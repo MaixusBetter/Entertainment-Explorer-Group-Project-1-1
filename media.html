@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>My Media Board</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <img  class="logo" src="images/_Entertainement Explorer Logo Dark.png" alt="logo" >
+        My Media Board        
+    </header>
+
+    <div class="row">
+        <div class="column">
+            <div class="container col s3 ">
+            <div class="title">
+              My Music 
+              <img class="gif" src="images/music.gif" alt="gif dancing">
+            </div>
+                <ul class="listmusic lane collection" id="listMusic">
+                  <li class="collection-item black">TOXIC-BRITNEY SPEARS 
+                    <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>                   
+                  </li>
+                </ul>
+            </div>
+            
+            <div class="container col s3">
+            <div>
+              My Movies
+              <img  class="gif" src="images/movies.gif" alt="gif watching" >
+            </div>
+            <ul class="listfilm lane collection" id="listMovie">
+
+            </ul>
+            </div>
+            <div class="container col s3 collection">
+              My TV Shows
+              <img class="gif" src="images/TvShow.gif" alt="gif watching serie">
+              <ul class="listfilm lane collection" id="listSeries">
+                    
+            </ul>
+          </div>
+        </div>
+    </div>
+    <script> function myFunction(x) {
+      x.classList.toggle("fa-thumbs-down");
+    }</script>
+    
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+ 
+</body>
+<footer><button type="checkbox" >dark/light </button></footer>
+</html>
