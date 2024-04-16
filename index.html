@@ -29,7 +29,7 @@
       <h1 class="header center grey-text">ENTERTAINMENT FOR HUMANS</h1>
       <div class="row center">
         <div class="topnav">
-          <input type="text" placeholder="What will you enjoy next (enter song name, movie title, artist)">
+          <input id="searchInput" type="text" placeholder="What will you enjoy next (enter song name, movie title, artist)">
         </div>
       </div>
       <div class="row center">
@@ -39,13 +39,11 @@
       </div>
       <br><br>
             <!-- Temporary button to trigger modal -->
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+      <a class="waves-effect waves-light btn modal-trigger" id="searchButton" href="#modal1">Modal</a>
 
             <!-- Results Modal -->
       <div id="modal1" class="modal">
-        <div class="modal-content">
-        <h4>Results</h4>
-        <p>placeholder text</p>
+        <div class="modal-content" id="modalContent">
       </div>
       <div class="modal-footer">
         <a href="#!" class="waves-effect waves-green btn-flat">Add to Media Board</a>
