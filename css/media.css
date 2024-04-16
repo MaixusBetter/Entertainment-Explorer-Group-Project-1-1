@@ -1,0 +1,58 @@
+body{
+    background-color:#fcfefe
+}
+
+.logo{
+    width: 120px;
+}
+
+header{
+    display: flex;
+    color: rgb(250, 252, 254);
+    font-size: xx-large;
+    justify-content:flex-start;
+    padding: 10px;
+    background-color: #0b0b0b;
+
+}
+
+.container{
+    display: block;
+    height: 900px;
+    font-size:50px;
+    color: rgb(252, 245, 245);
+    background-color: #000407;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin: 30px;
+
+}
+
+.gif{width: 65px;
+    height: 65px;
+    border-radius: 10px;
+
+}
+.lane{
+    font-size:medium
+}
+
+.btn{
+    height: 30px;
+    background-color: rgb(242, 187, 70);
+    border-radius: 10px;}
+
+.collection{
+    border-radius:15px ;
+}
+
+
+.fa {
+    font-size:50px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .fa:hover {
+    color: darkblue;
+  }
