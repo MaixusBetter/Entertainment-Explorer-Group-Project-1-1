@@ -34,7 +34,7 @@ header{
 
 }
 .lane{
-    font-size:medium
+    font-size:x-large;
 }
 
 .btn{
@@ -55,4 +55,9 @@ header{
   
   .fa:hover {
     color: darkblue;
+  }
+
+  .hero{
+    display: flex;
+
   }
