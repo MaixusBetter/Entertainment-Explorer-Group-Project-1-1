@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
+  <title>Entertainment Exxplorer</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,23 +29,32 @@
       <h1 class="header center grey-text">ENTERTAINMENT FOR HUMANS</h1>
       <div class="row center">
         <div class="topnav">
-          <input type="text" placeholder="What will you enjoy next (enter song name, movie title, artist)">
+<<<<<<< HEAD
+          <form id="inputCreation">
+            <input type="text" id="user-input" name="user-input" placeholder="What will you enjoy next (enter song name, movie title, artist)">
+            <button id="submit">Search</button>
+          </form>
+          
+=======
+          <input id="searchInput" type="text" placeholder="What will you enjoy next (enter song name, movie title, artist)">
+>>>>>>> 9aa929b170a31049252388c8c2973416cd9794a5
         </div>
       </div>
       <div class="row center">
 
-        <!--My Media Board Button-->
-      
+        <!--My Media Board Button & Search-->
+        
+        <a href="media.html">
+          <button id="mediaBoard">Media Board</button>
+        </a>
       </div>
       <br><br>
             <!-- Temporary button to trigger modal -->
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+      <a class="waves-effect waves-light btn modal-trigger" id="searchButton" href="#modal1">Modal</a>
 
             <!-- Results Modal -->
       <div id="modal1" class="modal">
-        <div class="modal-content">
-        <h4>Results</h4>
-        <p>placeholder text</p>
+        <div class="modal-content" id="modalContent">
       </div>
       <div class="modal-footer" id="test">
         <a href="#!" class="waves-effect waves-green btn-flat">Add to Media Board</a>
@@ -66,6 +75,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/search.js"></script>
   <script src="./js/landingpage-modal.js"></script>
 
   </body>
