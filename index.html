@@ -31,9 +31,9 @@
         <div class="topnav">
           <form id="inputCreation">
             <input type="text" id="user-input" name="user-input" placeholder="What will you enjoy next (enter song name, movie title, artist)">
-            <button class="waves-effect waves-light btn" id="submit">Search</button>
+            <button id="submit" data-target="modal1" class="btn modal-trigger">Search</button>
           </form>
-
+          
         </div>
       </div>
       <div class="row center">
@@ -45,15 +45,13 @@
         </a>
       </div>
       <br><br>
-            <!-- Temporary button to trigger modal -->
-      <a class="waves-effect waves-light btn modal-trigger" id="searchButton" href="#modal1">Modal</a>
 
             <!-- Results Modal -->
       <div id="modal1" class="modal">
         <div class="modal-content" id="modalContent">
       </div>
-      <div class="modal-footer" id="test">
-        <a href="#!" class="waves-effect waves-green btn-flat">Add to Media Board ok</a>
+      <div class="modal-footer">
+        <a href="#!" id="add" class="waves-effect waves-green btn-flat">Add to Media Board</a>
       </div>
   </div>
     </div>
