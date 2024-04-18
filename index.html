@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Entertainment Exxplorer</title>
+  <title>Entertainment Explorer</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,7 +12,7 @@
 </head>
 <body>
   <nav class="black" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="images/_Entertainement Explorer Logo Dark.png" alt="Bisho Logo" width=200px></a>
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="images/Logo-Dark.png" alt="Bisho Logo" width=200px></a>
       <ul class="right hide-on-med-and-down">
         <!--My Media Board Button-->
       </ul>
@@ -41,7 +41,7 @@
         <!--My Media Board Button & Search-->
         
         <a href="media.html">
-          <button id="mediaBoard">Media Board</button>
+          <button class="waves-effect waves-light btn" id="mediaBoard">Media Board</button>
         </a>
       </div>
       <br><br>
@@ -56,7 +56,7 @@
   </div>
     </div>
   </div>
-
+ <footer>
     <div class="footer-copyright">
       <div class="container">
       Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">TEAM 1 using Materialize</a>
@@ -71,6 +71,12 @@
   <script src="js/init.js"></script>
   <script src="js/search.js"></script>
   <script src="./js/landingpage-modal.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+  <script>
+    function addDarkmodeWidget() {
+      new Darkmode().showWidget();
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+  </script>
   </body>
 </html>
