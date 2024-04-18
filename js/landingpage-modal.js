@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
           <p>${data.Plot}</p>
           <p>IMDB Rating: ${data.imdbRating}</p>
         `;
+        
+        localStorage.setItem('Title', JSON.stringify(data.Title));
 
         const instance = M.Modal.getInstance(modal);
         instance.open();
@@ -18,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => console.error('Error fetching movie details:', error));
   }
 
-  document.getElementById('searchButton').addEventListener('click', function() {
-    const movieTitle = document.getElementById('searchInput').value;
+  document.getElementById('submit').addEventListener('click', function() {
+    const movieTitle = document.getElementById('user-input').value;
     fetchMovieDetails(movieTitle);
   });
 
