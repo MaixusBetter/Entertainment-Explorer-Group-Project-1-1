@@ -15,8 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
           <img src="${data.Poster}" alt="${data.Title} Poster">
         `;
 
-        btnadd.addEventListener('click', localStorage.setItem('Title', JSON.stringify(data.Title)));
-        
+        btnadd.addEventListener('click', () => {
+          const existingTitles = JSON.parse(localStorage.getItem('Titles')) || [];
+          existingTitles.push(data.Title);
+          localStorage.setItem('Titles', JSON.stringify(existingTitles));
+      });
         
         
 
@@ -26,15 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => console.error('Error fetching movie details:', error));
   }
 
-  document.getElementById('submit').addEventListener('click', function() {
+ document.getElementById('submit').addEventListener('click', function() {
     const movieTitle = document.getElementById('user-input').value;
     fetchMovieDetails(movieTitle);
   });
 
   const modalInstance = M.Modal.init(modal, {
     dismissible: true
-  });
+  }); 
 });
+
+
 
 //------ADD to media Board
 
@@ -42,20 +47,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function getstorage(){
   
-  const gettitle = JSON.parse(localStorage.getItem('Title'));
+  const gettitle = JSON.parse(localStorage.getItem('Titles'));
 
   if (gettitle !== null){
-    Title = gettitle;
+    Titles = gettitle;
  };
- createCollectionMovie(gettitle)
+console.log(gettitle);
+
+for (let title of gettitle){
+ createCollectionMovie(title);
 
 };
-
+};
 
 
 function createCollectionMovie(movieInfo) {
 
-
+console.log()
    const cardMovie = $('<li>')
       .addClass('collection-item black')
       .text(movieInfo);
