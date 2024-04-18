@@ -1,3 +1,5 @@
+const btnadd = document.querySelector('#add');
+
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('modal1');
   const modalContent = document.getElementById('modalContent');
@@ -10,9 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
           <h4>${data.Title}</h4>
           <p>${data.Plot}</p>
           <p>IMDB Rating: ${data.imdbRating}</p>
+          <img src="${data.Poster}" alt="${data.Title} Poster">
         `;
+
+        btnadd.addEventListener('click', localStorage.setItem('Title', JSON.stringify(data.Title)));
         
-        localStorage.setItem('Title', JSON.stringify(data.Title));
+        
+        
 
         const instance = M.Modal.getInstance(modal);
         instance.open();
@@ -29,3 +35,39 @@ document.addEventListener('DOMContentLoaded', function() {
     dismissible: true
   });
 });
+
+//------ADD to media Board
+
+
+
+function getstorage(){
+  
+  const gettitle = JSON.parse(localStorage.getItem('Title'));
+
+  if (gettitle !== null){
+    Title = gettitle;
+ };
+ createCollectionMovie(gettitle)
+
+};
+
+
+
+function createCollectionMovie(movieInfo) {
+
+
+   const cardMovie = $('<li>')
+      .addClass('collection-item black')
+      .text(movieInfo);
+  
+    const likethumb = $('<i>')
+      .addClass('fa fa-thumbs-up')
+      .on("click", function() { myFunction(this); });
+  
+    likethumb.appendTo(cardMovie);
+    $('#listMovie').append(cardMovie);
+
+  }
+
+
+  window.addEventListener('load',getstorage);
