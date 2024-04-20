@@ -33,8 +33,6 @@ function handleFormSubmit(event) {
                 localStorage.setItem(`media_data_${timestamp}`, mediaJSON);
             
 
-
-
   }
           // Clear input fields
          $('input[type="text"]').val('');
@@ -42,23 +40,10 @@ function handleFormSubmit(event) {
 }
 
 
-//Registers the submit button from html
-formEl.on('submit', handleFormSubmit);
-
 const btnEL = document.querySelector('#genres');
 
 btnEL.addEventListener('click', filterBtn);
-//btnadd.addEventListener('click', addRandomSuggestion);
 
-
-// function loadStoredMovies() {
-//   const storedMovies = JSON.parse(localStorage.getItem("title"));
-//   if (storedMovies) {
-//     storedMovies.forEach(createCollectionMovie);
-//   }
-// }
-
-// Filter button click handler
 function filterBtn(event) {
   const genrebtn = event.target.getAttribute('genrebtn');
   if (genrebtn) {
@@ -85,11 +70,7 @@ function genreChosen(genrebtn) {
       randomSuggestion(data.results);
 
 
-      btnadd.addEventListener('click', () => {
-        const existingTitles = JSON.parse(localStorage.getItem('Titles')) || [];
-        existingTitles.push(data.results.original_title);
-        localStorage.setItem('Titles', JSON.stringify(existingTitles));
-    });
+  
     })
     .catch(error => {
       alert(error.message);
@@ -102,20 +83,35 @@ function randomSuggestion(data) {
   const randomItem = data[Math.floor(Math.random() * data.length)];
   const randomTitle = randomItem.original_title;
   const randomPic = randomItem.poster_path;
-  suggestions(randomTitle, randomPic);
+  const randomplot = randomItem.overview;
+
+
+  suggestions(randomTitle, randomPic, randomplot);
+
+  btnadd.addEventListener('click', () => {
+    const existingTitles = JSON.parse(localStorage.getItem('Titles')) || [];
+    existingTitles.push(randomTitle);
+    localStorage.setItem('Titles', JSON.stringify(existingTitles));
+    console.log(existingTitles);
+});
 }
 
 
 // Display suggestions
-function suggestions(title, img) {
+function suggestions(title, img, Plot) {
   const sugTitle = $('<li>')
-    .text(title);
+   
 
-  const div = $('<div>');
+  const div = $('<h4>')
+   .text(title);
   div.appendTo(sugTitle);
 
+  const plot = $('<p>')
+  .text(Plot);
+  plot.appendTo(sugTitle);
+
   const sugPicture = $('<img>').attr("src", `https://image.tmdb.org/t/p/w500/${img}`);
-  sugPicture.appendTo(div);
+  sugPicture.appendTo(sugTitle);
 
   $('#modalContent').append(sugTitle);
 }
@@ -130,15 +126,13 @@ function getstorage(){
 console.log(gettitle);
 
 for (let title of gettitle){
- createCollectionMovie(title);
-
+ createCollectionTitle(title);
 };
 };
 
 
-function createCollectionMovie(movieInfo) {
+function createCollectionTitle(movieInfo) {
 
-console.log(movieInfo)
    const cardMovie = $('<li>')
       .addClass('collection-item black')
       .text(movieInfo);
@@ -150,10 +144,10 @@ console.log(movieInfo)
     likethumb.appendTo(cardMovie);
     $('#listMovie').append(cardMovie);
 
-  }
+  };
 
 
-  window.addEventListener('load',getstorage);
+window.addEventListener('load',getstorage);
 
 //Registers the submit button from html
 formEl.on('submit', handleFormSubmit);
